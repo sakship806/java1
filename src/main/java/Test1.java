@@ -10,6 +10,11 @@ public class Test1 {
 
         }
 
+    /**
+     * @author sakshi
+     * @param num
+     * Good coding practice
+     */
     public static void printNumbers(int num){
 //        while(num >= 0){
 //            System.out.println(num);
