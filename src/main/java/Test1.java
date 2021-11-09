@@ -1,10 +1,4 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-<<<<<<< HEAD
-import java.sql.SQLOutput;
-=======
->>>>>>> 43186f1c2cc4151e3d7f51e6266498f9145cc68d
 import java.util.Scanner;
 
 public class Test1 {
