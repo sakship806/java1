@@ -27,10 +27,20 @@ public class Test1 {
 //            System.out.println(itr);
 //        }
 
-        String input = "abcbad";
-        findCharOccurence(input);
+//        String input = "abcbad";
+        int[] input = {1,2,3,4,5,6};
+        System.out.println(tt(input));
 
         }
+
+     public static int tt(int[] input){
+        int count=0;
+        for (int i=0; i<input.length;i++){
+            if (input[i]%2==0)
+                count++;
+        }
+        return count;
+     }
 
     public static void findCharOccurence(String input){
         Map<Character,Integer> map= new HashMap<>();
