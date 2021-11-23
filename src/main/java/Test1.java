@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class Test1 {
-    public static void main(String... args) throws IOException {
+    public static void main(String... args) throws Exception {
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Enter some number : ");
 //        int num = sc.nextInt();
@@ -30,7 +30,99 @@ public class Test1 {
 //        String input = "abcbad";
 //        int[] input = {1,2,3,4,5,6};
 //        System.out.println(tt(input));
-        comboPrint();
+//        comboPrint();
+        // 2:30 customer obsession (rakes)
+        // humaun (divya manager , 9:30 pm )  developer platomrm
+        // divya darshni - cloud platform
+
+        String[] input = {"act", "tac", "abhi", "bhai"};
+//        printPyramid();
+//       printPrimes(2, 25);
+        // System.out.println(isPrime(4));
+//        System.out.println(fact(50l));
+        factorial(1000);
+        }
+
+    static void factorial(int n)
+    {
+        int res[] = new int[5000000];
+
+        // Initialize result
+        res[0] = 1;
+        int res_size = 1;
+
+        // Apply simple factorial formula
+        // n! = 1 * 2 * 3 * 4...*n
+        for (int x = 2; x <= n; x++)
+            res_size = multiply(x, res, res_size);
+
+        System.out.println("Factorial of given number is ");
+        for (int i = res_size - 1; i >= 0; i--)
+            System.out.print(res[i]);
+    }
+
+    static int multiply(int x, int res[], int res_size)
+    {
+        int carry = 0; // Initialize carry
+
+        // One by one multiply n with individual
+        // digits of res[]
+        for (int i = 0; i < res_size; i++)
+        {
+            int prod = res[i] * x + carry;
+            res[i] = prod % 10; // Store last digit of
+            // 'prod' in res[]
+            carry = prod/10; // Put rest in carry
+        }
+
+        // Put carry in res and increase result size
+        while (carry!=0)
+        {
+            res[res_size] = carry % 10;
+            carry = carry / 10;
+            res_size++;
+        }
+        return res_size;
+    }
+
+
+
+        public static long fact(long i){
+           if(i==0 || i==1)
+               return 1;
+           return i*fact(i-1);
+        }
+
+        public static void printPrimes(int start, int count) throws Exception {
+            if (start<2)
+                throw  new Exception("Not valid Input");
+
+            for(int i= start;; i++){
+                if(isPrime(i)) {
+                    count--;
+                    System.out.println(i);
+                }
+                if (count ==0)
+                    break;
+            }
+        }
+
+        public static boolean isPrime(int input){
+          for(int i=2; i<= Math.sqrt(input); i++)
+              if(input %i ==0)
+                  return  false;
+
+          return true;
+        }
+
+
+        public static void printPyramid(){
+            for (int i =5;i>=0;i--){
+                for (int j=i; j<5; j++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
         }
 
      public static void comboPrint(){
